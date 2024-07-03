@@ -24,17 +24,17 @@ try:
         st.markdown(heads['instructions'],unsafe_allow_html=True)
 
         bases = heads['analyzedInstructions'][0]['steps']
-        for i in range(0,len(bases)-1):
-            tr = bases[i]['number']
-            qadam_nomi = bases[0]['step']
-            ingridient_nomi = bases[0]['step']['ingredients'][0]['name']
-            # ingridient_rasmi = bases[0]['step']['ingredients'][0]['image']
-            # equipment_nomi = bases[0]['step']['equipment'][0]['name']
-            # equipment_rasmi = bases[0]['step']['equipment'][0]['image']
-            
-            st.markdown(f"""
-                        {tr}. {qadam_nomi}
-            """,unsafe_allow_html=True)
+        
+        tr = bases[0]['number']
+        qadam_nomi = bases[0]['step']
+        ingridient_nomi = bases[0]['step']['ingredients'][0]['name']
+        # ingridient_rasmi = bases[0]['step']['ingredients'][0]['image']
+        # equipment_nomi = bases[0]['step']['equipment'][0]['name']
+        # equipment_rasmi = bases[0]['step']['equipment'][0]['image']
+        
+        st.markdown(f"""
+                    {tr}. {qadam_nomi}
+        """,unsafe_allow_html=True)
 except Exception as e:
     st.error(f'Xatolik {str(e)}')
     
