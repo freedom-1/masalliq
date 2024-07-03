@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
-import json
+import os
+
+token = os.getenv('token')
 url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random"
 
 st.header("Ovqat nomini yozing va tezda tayyorlang", )
@@ -9,7 +11,7 @@ if matn != None:
     querystring = {"tags":matn,"number":"1"}
 
     headers = {
-        "x-rapidapi-key": "dc521e16e1msh8a91d612c2d7f38p1e17cajsnd665a5824996",
+        "x-rapidapi-key": token,
         "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
     }
 
